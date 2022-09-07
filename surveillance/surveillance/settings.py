@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'detection',
     'notification',
     'map',
+    'face_detection',
 ]
 
 MIDDLEWARE = [
