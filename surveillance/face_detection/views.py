@@ -48,7 +48,7 @@ def face_extractor(img):
 
 def face_capture(request):
     # Doing some Face Recognition with the webcam
-    video_capture = cv2.VideoCapture(1)
+    video_capture = cv2.VideoCapture(0)
     while True:
         _, frame = video_capture.read()
         #canvas = detect(gray, frame)
