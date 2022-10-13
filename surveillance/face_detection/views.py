@@ -22,10 +22,10 @@ from keras.models import load_model
 import numpy as np
 
 from keras.preprocessing import image
-model = load_model(r'/home/mdrafsunsheikh/Desktop/STC&S_ai_detector/surveillance/static/facefeatures_new_model copy.h5')
+model = load_model(r'/home/mdrafsunsheikh/Desktop/STC&S_ai_detector/surveillance/face_detection/facefeatures_new_model.h5')
 
 # Loading the cascades
-face_cascade = cv2.CascadeClassifier(r'/home/mdrafsunsheikh/Desktop/STC&S_ai_detector/surveillance/static/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r'/home/mdrafsunsheikh/Desktop/STC&S_ai_detector/surveillance/face_detection/haarcascade_frontalface_default.xml')
 
 def face_extractor(img):
     # Function detects faces and returns the cropped face
@@ -68,14 +68,14 @@ def face_capture(request):
                         
             name="None matching"
             
-            if(pred[0][3]>0.5):
-                name='Krish'
-            elif(pred[0][3]>0.5):
-                name='Shahrukh'
-            elif(pred[0][3]>0.5):
+            if(pred[0][0]>0.7):
                 name='Hrittik'
-            elif(pred[0][3]>0.5):
+            elif(pred[0][1]>0.7):
                 name='Salman'
+            elif(pred[0][2]>0.7):
+                name='Shahrukh'
+            elif(pred[0][3]>0.7):
+                name='Unknown'
             cv2.putText(frame,name, (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)
         else:
             cv2.putText(frame,"No face found", (50, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,0), 2)

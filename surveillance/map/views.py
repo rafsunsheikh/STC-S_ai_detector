@@ -19,10 +19,10 @@ def index(request):
         "<br><b>Longitude: </b>" +str(tower.longitude)+ "<br><b>Go to: </b><a href ={} target={}>".format(url,blank) +tower.name+ "</a>" , icon = folium.Icon(color="green")))
 
 # checkpost loop goes here-----------------------
-    fg.add_child(folium.Marker(location=[22.3958, 92.4019], tooltip = "CheckPost 1",  popup="<b>Name: </b> CheckPost1" "<br><b>Location: </b>Bandarban Zone 1" "<br><b>Latitude: </b> 22.3958"
-        "<br><b>Longitude: </b> 92.4019" "</a>" , icon = folium.Icon(color="red")))
+    fg.add_child(folium.Marker(location=[23.197683, 89.180595], tooltip = "CheckPost 1",  popup="<b>Name: </b> CheckPost1" "<br><b>Location: </b>STC&S" "<br><b>Latitude: </b> 23.197683"
+        "<br><b>Longitude: </b> 89.180595" "</a>" , icon = folium.Icon(color="red")))
 
-    m = folium.Map(location=[22.3958, 92.4019], 
+    m = folium.Map(location=[23.197683, 89.180595], 
     zoom_start =12, tiles="Stamen Terrain")
 
 
